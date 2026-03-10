@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayffson Will | Designer de Campanhas</title>
+    
+    <!-- Fontes Google (Montserrat Black para títulos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #F4C600;
+            --dark-bg: #1a1a1a;
+            --text-color: #1a1a1a;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        /* TÍTULOS EM BLACK (900) E ENTRELINHA REDUZIDA */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.88;
+            letter-spacing: -1px;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img, video { width: 100%; display: block; }
+
+        /* HEADER */
+        header {
+            background-color: var(--primary-color);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--dark-bg);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+            color: var(--dark-bg);
+        }
+
+        nav a:hover {
+            color: var(--white);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+        }
+
+        .cta-btn {
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 0.8rem 1.5rem;
+            font-weight: 800;
+            border-radius: 4px;
+            transition: var(--transition);
+            border: 2px solid var(--dark-bg);
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--dark-bg);
+        }
+
+        .menu-toggle { 
+            display: none; 
+            font-size: 2rem; 
+            cursor: pointer; 
+            font-weight: 900;
+            margin-left: auto;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(244,198,0,0.85), rgba(244,198,0,0.9)), url('https://images.unsplash.com/photo-1540910419868-474947be6619?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--dark-bg);
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            margin-top: 2.6rem;
+            border: 5px solid var(--dark-bg);
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 15px 15px 0px var(--dark-bg);
+            background-color: var(--dark-bg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 0.85;
+            color: var(--dark-bg);
+        }
+
+        .hero-content span {
+            color: var(--dark-bg);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 600;
+        }
+
+        /* STATS NO HERO - SEM BOX */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem auto 2.5rem;
+            max-width: 500px;
+            padding: 0;
+        }
+
+        .hero-stat-item {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 4.2rem;
+            color: var(--dark-bg);
+            line-height: 1;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--dark-bg);
+            margin-top: 0.3rem;
+            display: block;
+        }
+
+        .hero-btn {
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            display: inline-block;
+            text-transform: uppercase;
+            border: 2px solid var(--dark-bg);
+        }
+        
+        .hero-btn:hover {
+            background-color: transparent;
+            color: var(--dark-bg);
+        }
+
+        /* PORTFOLIO */
+        .portfolio, .institucional, .clientes {
+            padding: 4rem 5%; /* Reduzido de 6rem para 4rem */
+            background-color: var(--primary-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem; /* Reduzido de 4rem para 3rem */
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .section-header .line {
+            display: none;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem; /* Reduzido de 3rem para 2.5rem */
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--primary-color);
+            border: 3px solid var(--dark-bg);
+            padding: 0.8rem 2rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: var(--transition);
+            color: var(--dark-bg);
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 10px 10px 0px var(--dark-bg);
+            transition: var(--transition);
+            position: relative;
+            border: 3px solid var(--dark-bg);
+        }
+
+        .portfolio-item:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px var(--dark-bg);
+        }
+
+        .media-container {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            cursor: pointer;
+            border-bottom: 3px solid var(--dark-bg);
+        }
+
+        .media-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover .media-container img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .zoom-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-bg);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px; height: 70px;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            border: 3px solid var(--dark-bg);
+            z-index: 2;
+        }
+
+        .item-info {
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: var(--dark-bg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .item-info h3 {
+            font-size: 1.4rem;
+            margin-top: 0.5rem;
+            color: var(--dark-bg);
+            line-height: 1.1;
+        }
+
+        .case-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* CLIENTES SECTION */
+        .clientes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 2rem; /* Reduzido de 2.5rem para 2rem */
+            margin-top: 2rem; /* Reduzido de 3rem para 2rem */
+            justify-items: center;
+        }
+
+        .cliente-item {
+            width: 120px;
+            height: 120px;
+            transition: var(--transition);
+        }
+
+        .cliente-item:hover {
+            transform: scale(1.05);
+        }
+
+        .cliente-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 3px solid var(--dark-bg);
+            border-radius: 50%;
+            box-shadow: 5px 5px 0px var(--dark-bg);
+        }
+
+        .clientes-btn-container {
+            text-align: center;
+            margin-top: 3rem; /* Reduzido de 4rem para 3rem */
+        }
+
+        .clientes-btn {
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 1rem 3rem;
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 4px;
+            display: inline-block;
+            text-transform: uppercase;
+            border: 2px solid var(--dark-bg);
+            transition: var(--transition);
+        }
+
+        .clientes-btn:hover {
+            background-color: transparent;
+            color: var(--dark-bg);
+        }
+
+        /* PÁGINA DE CLIENTES COMPLETA */
+        .clientes-page {
+            display: none;
+            padding: 6rem 5% 4rem;
+            background-color: var(--primary-color);
+            min-height: 100vh;
+        }
+
+        .clientes-page.active {
+            display: block;
+        }
+
+        .clientes-page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .cliente-page-item {
+            text-align: center;
+            background: var(--white);
+            border: 3px solid var(--dark-bg);
+            padding: 1.5rem;
+            box-shadow: 8px 8px 0px var(--dark-bg);
+            transition: var(--transition);
+        }
+
+        .cliente-page-item:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 12px 12px 0px var(--dark-bg);
+        }
+
+        .cliente-page-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--dark-bg);
+            border-radius: 50%;
+        }
+
+        .cliente-page-item h3 {
+            font-size: 1.1rem;
+            color: var(--dark-bg);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .cliente-page-item p {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .voltar-btn {
+            display: inline-block;
+            margin-top: 3rem;
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 1rem 3rem;
+            font-weight: 800;
+            font-size: 1rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            border: 2px solid var(--dark-bg);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .voltar-btn:hover {
+            background-color: transparent;
+            color: var(--dark-bg);
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 4rem 5%; /* Reduzido de 6rem para 4rem */
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+            border-top: 3px solid var(--dark-bg);
+            border-bottom: 3px solid var(--dark-bg);
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .about-img img {
+            border: 3px solid var(--dark-bg);
+            box-shadow: 20px 20px 0px var(--dark-bg);
+            width: 100%;
+            height: auto;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--dark-bg);
+            line-height: 0.88;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: none;
+        }
+
+        .stat-box h4 {
+            font-size: 4.2rem;
+            color: var(--dark-bg);
+            line-height: 1;
+        }
+        
+        .stat-box p {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            padding: 4rem 5% 2rem; /* Reduzido de 5rem 5% 3rem para 4rem 5% 2rem */
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2rem; /* Reduzido de 3rem para 2rem */
+        }
+
+        .footer-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-content p {
+            font-size: 1.2rem;
+            color: #ccc;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            font-size: 1.275rem;
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 800;
+            text-transform: uppercase;
+            border: 2px solid var(--primary-color);
+            padding: 0.425rem 0.85rem;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 600;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-content iframe {
+            width: 80vw;
+            height: 45vw;
+            max-height: 80vh;
+            border: 3px solid var(--primary-color);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--white);
+            font-size: 50px;
+            cursor: pointer;
+            z-index: 2001;
+            font-weight: 900;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 45px;
+            }
+            
+            .hero-stats {
+                gap: 2rem;
+                flex-direction: column;
+            }
+            
+            .hero-stat-number {
+                font-size: 3.5rem;
+            }
+            
+            .hero-image {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto 1.5rem;
+                margin-top: 2.6rem;
+            }
+            
+            .hero-content h1 { font-size: 2.5rem; }
+            .section-header h2 { font-size: 2.5rem; }
+            .about-text h2 { font-size: 2.2rem; }
+            
+            .menu-toggle { 
+                display: block; 
+                margin-left: auto;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--primary-color);
+                padding: 2rem;
+                border-bottom: 3px solid var(--dark-bg);
+                text-align: center;
+            }
+            nav ul.active { display: flex; }
+            
+            .about { flex-direction: column; gap: 3rem; }
+            .about-img img { box-shadow: 10px 10px 0px var(--dark-bg); }
+            
+            .modal-content iframe { width: 95vw; height: 53vw; }
+            
+            .social-links {
+                gap: 1.5rem;
+            }
+
+            .clientes-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .cliente-item {
+                width: 100px;
+                height: 100px;
+            }
+
+            .clientes-page-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="logo-image.png" alt="Kayffson Will - Designer de Campanhas Vencedoras">
+        </a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#portfolio">Campanhas</a></li>
+                <li><a href="#institucional">Institucional</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact" class="cta-btn">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="hero-image.webp" alt="Kayffson Will">
+            </div>
+            
+            <h1>Design que <br><span>Vence Eleições</span></h1>
+            <p>Especialista em identidade visual, publicidade política e materiais de campanha de alto impacto.</p>
+            
+            <!-- STATS NO HERO - SEM BOX -->
+            <div class="hero-stats">
+                <div class="hero-stat-item">
+                    <span class="hero-stat-number">+50</span>
+                    <span class="hero-stat-label">Candidatos Eleitos</span>
+                </div>
+                <div class="hero-stat-item">
+                    <span class="hero-stat-number">+25</span>
+                    <span class="hero-stat-label">Anos de Estrada</span>
+                </div>
+            </div>
+            
+            <a href="#portfolio" class="hero-btn">Ver Campanhas</a>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="section-header">
+            <h2>Campanhas</h2>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterPortfolio('all', 'portfolio')">TODOS</button>
+            <button class="filter-btn" onclick="filterPortfolio('redes', 'portfolio')">REDES SOCIAIS</button>
+            <button class="filter-btn" onclick="filterPortfolio('graficas', 'portfolio')">PEÇAS GRÁFICAS</button>
+            <button class="filter-btn" onclick="filterPortfolio('video', 'portfolio')">VÍDEOS</button>
+        </div>
+
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item" data-category="graficas">
+                <div class="media-container" onclick="openModal('image', 'URL_DA_SUA_IMAGEM_AQUI')">
+                    <img src="https://images.unsplash.com/photo-1575320181282-9afab399332c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Campanhas Políticas">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="tag">PEÇAS GRÁFICAS</span>
+                    <h3>Campanhas Políticas</h3>
+                    <a href="#" class="case-link">Ver Peças →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="video">
+                <div class="media-container" onclick="openModal('video', 'URL_DO_SEU_VIDEO_AQUI')">
+                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Portfólio">
+                    <div class="play-button">▶</div>
+                    <div class="overlay"><span class="zoom-icon">▶</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="tag">VÍDEOS</span>
+                    <h3>Portfólio</h3>
+                    <a href="#" class="case-link">Ver Peças →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="redes">
+                <div class="media-container" onclick="openModal('image', 'URL_DA_SUA_IMAGEM_AQUI')">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Publicações">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="tag">REDES SOCIAIS</span>
+                    <h3>Publicações</h3>
+                    <a href="#" class="case-link">Ver Peças →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO INSTITUCIONAL -->
+    <section class="institucional" id="institucional">
+        <div class="section-header">
+            <h2>Institucional</h2>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterPortfolio('all', 'institucional')">TODOS</button>
+            <button class="filter-btn" onclick="filterPortfolio('redes-inst', 'institucional')">REDES SOCIAIS</button>
+            <button class="filter-btn" onclick="filterPortfolio('graficas-inst', 'institucional')">PEÇAS GRÁFICAS</button>
+            <button class="filter-btn" onclick="filterPortfolio('video-inst', 'institucional')">VÍDEOS</button>
+        </div>
+
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item" data-category="graficas-inst">
+                <div class="media-container" onclick="openModal('image', 'URL_DA_SUA_IMAGEM_AQUI')">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Identidade Visual">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="tag">PEÇAS GRÁFICAS</span>
+                    <h3>Identidade Visual Corporativa</h3>
+                    <a href="#" class="case-link">Ver Peças →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="video-inst">
+                <div class="media-container" onclick="openModal('video', 'URL_DO_SEU_VIDEO_AQUI')">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Vídeo Institucional">
+                    <div class="play-button">▶</div>
+                    <div class="overlay"><span class="zoom-icon">▶</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="tag">VÍDEOS</span>
+                    <h3>Vídeo Institucional</h3>
+                    <a href="#" class="case-link">Ver Peças →</a>
+                </div>
+            </div>
+
+            <div class="portfolio-item" data-category="redes-inst">
+                <div class="media-container" onclick="openModal('image', 'URL_DA_SUA_IMAGEM_AQUI')">
+                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Redes Sociais Corporativas">
+                    <div class="overlay"><span class="zoom-icon">🔍</span></div>
+                </div>
+                <div class="item-info">
+                    <span class="tag">REDES SOCIAIS</span>
+                    <h3>Redes Sociais Corporativas</h3>
+                    <a href="#" class="case-link">Ver Peças →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO CLIENTES -->
+    <section class="clientes" id="clientes">
+        <div class="section-header">
+            <h2>Clientes</h2>
+        </div>
+
+        <div class="clientes-grid">
+            
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 1">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 2">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 3">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 4">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 5">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 6">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 7">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 8">
+            </div>
+
+            <div class="cliente-item">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Cliente 9">
+            </div>
+
+        </div>
+
+        <div class="clientes-btn-container">
+            <button onclick="showClientesPage()" class="clientes-btn">VER MAIS</button>
+        </div>
+    </section>
+
+    <!-- PÁGINA COMPLETA DE CLIENTES -->
+    <section class="clientes-page" id="clientesPage">
+        <div class="section-header">
+            <h2>Todos os Clientes</h2>
+        </div>
+
+        <div class="clientes-page-grid">
+            
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="João Silva">
+                <h3>João Silva</h3>
+                <p>Prefeito - Eleições 2024</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Maria Santos">
+                <h3>Maria Santos</h3>
+                <p>Vereadora - Eleições 2024</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Carlos Oliveira">
+                <h3>Carlos Oliveira</h3>
+                <p>Deputado Estadual</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Ana Paula">
+                <h3>Ana Paula</h3>
+                <p>Partido XYZ</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Roberto Almeida">
+                <h3>Roberto Almeida</h3>
+                <p>Deputado Federal</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Fernanda Lima">
+                <h3>Fernanda Lima</h3>
+                <p>Senadora</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Paulo Mendes">
+                <h3>Paulo Mendes</h3>
+                <p>Prefeito - Eleições 2020</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Juliana Costa">
+                <h3>Juliana Costa</h3>
+                <p>Vereadora - Eleições 2024</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Ricardo Souza">
+                <h3>Ricardo Souza</h3>
+                <p>Partido ABC</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Patricia Ferreira">
+                <h3>Patricia Ferreira</h3>
+                <p>Deputada Estadual</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Marcos Ribeiro">
+                <h3>Marcos Ribeiro</h3>
+                <p>Vereador - Eleições 2024</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Luciana Martins">
+                <h3>Luciana Martins</h3>
+                <p>Prefeita - Eleições 2020</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="André Cardoso">
+                <h3>André Cardoso</h3>
+                <p>Deputado Federal</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Camila Dias">
+                <h3>Camila Dias</h3>
+                <p>Partido DEF</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Bruno Araújo">
+                <h3>Bruno Araújo</h3>
+                <p>Vereador - Eleições 2020</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Renata Gomes">
+                <h3>Renata Gomes</h3>
+                <p>Deputada Estadual</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Eduardo Pinto">
+                <h3>Eduardo Pinto</h3>
+                <p>Prefeito - Eleições 2024</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Vanessa Rocha">
+                <h3>Vanessa Rocha</h3>
+                <p>Vereadora - Eleições 2024</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Gustavo Nunes">
+                <h3>Gustavo Nunes</h3>
+                <p>Partido GHI</p>
+            </div>
+
+            <div class="cliente-page-item">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Daniela Castro">
+                <h3>Daniela Castro</h3>
+                <p>Senadora</p>
+            </div>
+
+        </div>
+
+        <div style="text-align: center;">
+            <button onclick="hideClientesPage()" class="voltar-btn">← VOLTAR</button>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="k-will.webp" alt="Kayffson Will">
+        </div>
+        <div class="about-text">
+            <h2>Design estratégico para você vencer</h2>
+            <p>Com mais de 25 anos no mercado publicitário, sei exatamente o que uma campanha precisa para vencer: comunicação que impacta, posiciona e conquista votos.</p>
+            <p>Me especializei em transformar candidatos em marcas fortes por meio de narrativas visuais estratégicas que geram autoridade, confiança e identificação imediata com o eleitor. Em eleição, quem comunica melhor, lidera.</p>
+            <p>Conheço bem como funcionam a pressão e a velocidade de uma campanha política. Por isso, cada peça visual deve ter um objetivo claro: destacar o candidato, dominar a percepção pública e transformar atenção em votos.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Coloque sua campanha em um novo patamar.</h2>
+            <p>Entre em contato. Quem quer vencer, começa forte.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Kayffson Will Design. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <div id="portfolio-modal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="" style="display:none;">
+            <iframe id="modal-video" src="" frameborder="0" allowfullscreen style="display:none;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-list').classList.toggle('active');
+        }
+
+        function filterPortfolio(category, section) {
+            let items;
+            if (section === 'portfolio') {
+                items = document.querySelectorAll('#portfolio .portfolio-item');
+            } else if (section === 'institucional') {
+                items = document.querySelectorAll('#institucional .portfolio-item');
+            }
+            
+            const buttons = event.target.parentElement.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'all' || itemCategory === category) {
+                    item.style.display = 'block';
+                    item.style.opacity = '0';
+                    setTimeout(() => item.style.opacity = '1', 50);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function showClientesPage() {
+            document.getElementById('clientesPage').classList.add('active');
+            document.getElementById('clientes').style.display = 'none';
+            document.getElementById('portfolio').style.display = 'none';
+            document.getElementById('institucional').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        function hideClientesPage() {
+            document.getElementById('clientesPage').classList.remove('active');
+            document.getElementById('clientes').style.display = 'block';
+            document.getElementById('portfolio').style.display = 'block';
+            document.getElementById('institucional').style.display = 'block';
+            document.getElementById('about').style.display = 'block';
+            document.querySelector('footer').style.display = 'block';
+        }
+
+        const modal = document.getElementById("portfolio-modal");
+        const modalImg = document.getElementById("modal-img");
+        const modalVideo = document.getElementById("modal-video");
+
+        function openModal(type, src) {
+            modal.style.display = "flex";
+            if (type === 'image') {
+                modalImg.src = src;
+                modalImg.style.display = "block";
+                modalVideo.style.display = "none";
+                modalVideo.src = "";
+            } else if (type === 'video') {
+                modalImg.style.display = "none";
+                modalVideo.style.display = "block";
+                modalVideo.src = src + "?autoplay=1";
+            }
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            modalVideo.src = "";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
